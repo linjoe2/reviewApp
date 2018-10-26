@@ -26,6 +26,10 @@ app.post('/submit', (req, res) => {
 	fs.readFile('data.json', (err,data) => {
 		if(err) { console.log(err)}
 		let item = JSON.parse(data)
+		// add timestamp to the input in format: day/month
+		let time = new Date(Date.now())
+		userData.time = `${time.getUTCDay()}/${time.getMonth()}`
+
 		item.push(userData)
 		item = JSON.stringify(item,null,2)
 		fs.writeFile('data.json', item, (err,data) => {
