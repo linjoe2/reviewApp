@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+<%# dropdown menu with 1 to 10%>
+<h3> grade the lecture from 1 to 5</h3>
+<select name="grades" id='grades'>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+<br>
+<%# textbox  with what went well?%>
+<h3> What went well?</h3>
+<input type='textbox' name='good' id='good'></input>
+<br>
+<%# textbox with what didnt go well?%>
+<h3> What went not so well?</h3>
+<input type='textbox' name='bad' id='bad'></input>
+<br>
+<%# submit button %>
+<button id='send'>submit my entry</button>
+
+<%# make script that post%>
+<%# if succeded remove submit button %>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+	$('#send').click(function(){
+		$.post('/submit',
+		       {grade: $('#grades').val(),
+			good: $('#good').val(), 
+			bad: $('#bad').val()}, 
+			function(data,status) {console.log(data)}
+	)
+	})
+})
+</script>
+
+</body>
+
+
