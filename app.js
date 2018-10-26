@@ -26,19 +26,13 @@ app.post('/submit', (req, res) => {
 	fs.readFile('data.json', (err,data) => {
 		if(err) { console.log(err)}
 		let item = JSON.parse(data)
-		console.log(item)
 		item.push(userData)
-		console.log(item)
 		item = JSON.stringify(item,null,2)
 		fs.writeFile('data.json', item, (err,data) => {
 			if(err){console.log(err)}
-			console.log('file written!')
+			res.send('done')
 		})
 	})
-	
-	
-	//stringify
-	//write
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

@@ -33,9 +33,13 @@ $(document).ready(function() {
 		$.post('/submit',
 		       {grade: $('#grades').val(),
 			good: $('#good').val(), 
-			bad: $('#bad').val()}, 
-			function(data,status) {console.log(data)}
-	)
+			bad: $('#bad').val()},
+		       function( data ) {
+			       if(data === 'done'){
+			       		$('#send').hide()
+			       }
+		       }
+		)
 	})
 })
 </script>
