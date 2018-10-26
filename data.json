@@ -10,5 +10,12 @@
     "good": "",
     "bad": "",
     "time": "5/9"
+  },
+  {
+    "lecture": "test",
+    "grade": "4",
+    "good": "test",
+    "bad": "test",
+    "time": "5/9"
   }
 ]

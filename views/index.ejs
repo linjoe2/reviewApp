@@ -2,6 +2,8 @@
 <head>
 </head>
 <body>
+<h3> What lecture are you reviewing?</h3>
+<input type='textbox' name='lecture' id='lecture'></input>
 <%# dropdown menu with 1 to 10%>
 <h3> grade the lecture from 1 to 5</h3>
 <select name="grades" id='grades'>
@@ -31,7 +33,8 @@
 $(document).ready(function() {
 	$('#send').click(function(){
 		$.post('/submit',
-		       {grade: $('#grades').val(),
+		       {lecture: $('#lecture').val(),
+			grade: $('#grades').val(),
 			good: $('#good').val(), 
 			bad: $('#bad').val()},
 		       function( data ) {
