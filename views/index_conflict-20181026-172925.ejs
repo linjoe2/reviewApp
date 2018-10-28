@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <head>
 	<link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
-	<link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css"> </head>
+	<link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+</head>
 <body>
-	<div style='width: 500px; margin: 50px auto;'>
-	<form action="javascript:myFunction(); return false;">
+	<form>
 <h3> What lecture are you reviewing?</h3>
 <input type='text' name='lecture' id='lecture'></input>
 <%# dropdown menu with 1 to 10%>
@@ -31,12 +31,10 @@
 <%# make script that post%>
 <%# if succeded remove submit button %>
 	</form>
-	</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready(function() {
 	$('#send').click(function(){
-		console.log('test')
 		$.post('/submit',
 		       {lecture: $('#lecture').val(),
 			grade: $('#grades').val(),
@@ -45,7 +43,6 @@ $(document).ready(function() {
 		       function( data ) {
 			       if(data === 'done'){
 			       		$('#send').hide()
-					alert('thankyou! your submit is recieved!:)')
 			       }
 		       }
 		)
