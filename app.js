@@ -47,4 +47,4 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 // post request to recieve the data
 // fs append to store the data
-/ res.send data recieve
+// res.send data recieve
