@@ -3,28 +3,31 @@
 	<link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
 	<link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css"> </head>
 <body>
-	<div style='width: 500px; margin: 50px auto;'>
-	<form action="javascript:myFunction(); return false;">
-<h3> What lecture are you reviewing?</h3>
-<input type='text' name='lecture' id='lecture'></input>
-<%# dropdown menu with 1 to 10%>
-<h3> grade the lecture from 1 to 5</h3>
-<select name="grades" id='grades'>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-  </select>
-<br>
-<%# textbox  with what went well?%>
-<h3> What went well?</h3>
-<input type='text' name='good' id='good'></input>
-<br>
-<%# textbox with what didnt go well?%>
-<h3> What went not so well?</h3>
-<input type='text' name='bad' id='bad'></input>
-<br>
+	<div style='width: 800px; margin: 50px auto;'>
+		<h2> The Classroom Critical Incident Questionnaire </h2>
+		<p> Please take about five minutes to respond to the questions below about this week’s class. Don't put
+your name on the form - your responses are anonymous. If nothing comes to mind for any of the questions
+just leave the space blank. At the next class we will share the group's responses with all of you. Thanks for
+taking the time to do this. What you write will help us make the class more responsive to your concerns.
+</p>
+
+<form action="javascript:void(0);" >
+<h3> At what moment in class this week did you feel most engaged with what was
+happening?</h3>
+<textarea id='q1' cols='40' rows='5'></textarea>
+<h3> At what moment in class this week were you most distanced from what was
+	happening?</h3>
+<textarea id='q2' cols='40' rows='5'></textarea>
+
+<h3> What action that anyone (teacher or student) took this week did you find most
+	affirming or helpful? </h3>
+<textarea id='q3' cols='40' rows='5'></textarea>
+<h3> What action that anyone took this week did you find most puzzling or confusing?</h3>
+<textarea id='q4' cols='40' rows='5'></textarea>
+<h3>What about the class this week surprised you the most? (This could be about your
+own reactions to what went on, something that someone did, or anything else that
+occurs).</h3>
+<textarea id='q5' cols='40' rows='5'></textarea>
 <%# submit button %>
 <button class="button-primary" id='send'>submit my entry</button>
 
@@ -38,10 +41,12 @@ $(document).ready(function() {
 	$('#send').click(function(){
 		console.log('test')
 		$.post('/submit',
-		       {lecture: $('#lecture').val(),
-			grade: $('#grades').val(),
-			good: $('#good').val(), 
-			bad: $('#bad').val()},
+		       {most_engaged: $('#q1').val(),
+			most_distanced: $('#q2').val(),
+			action_helpful: $('#q3').val(), 
+			action_confusing: $('#q4').val(),
+		       	suprised: $('#q5').val()
+		       },
 		       function( data ) {
 			       if(data === 'done'){
 			       		$('#send').hide()

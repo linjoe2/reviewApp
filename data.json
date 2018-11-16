@@ -1,70 +1,25 @@
 [
   {
-    "grade": "4",
-    "good": "test",
-    "bad": "test",
-    "time": 1540566020275
+    "time": "5/10"
   },
   {
-    "grade": "1",
-    "good": "",
-    "bad": "",
-    "time": "5/9"
+    "time": "5/10"
   },
   {
-    "lecture": "test",
-    "grade": "4",
-    "good": "test",
-    "bad": "test",
-    "time": "5/9"
+    "time": "5/10"
   },
   {
-    "lecture": "",
-    "grade": "1",
-    "good": "",
-    "bad": "",
-    "time": "5/9"
+    "time": "5/10"
   },
   {
-    "lecture": "",
-    "grade": "1",
-    "good": "",
-    "bad": "",
-    "time": "5/9"
+    "time": "5/10"
   },
   {
-    "lecture": "",
-    "grade": "1",
-    "good": "",
-    "bad": "",
-    "time": "5/9"
-  },
-  {
-    "lecture": "",
-    "grade": "1",
-    "good": "",
-    "bad": "",
-    "time": "5/9"
-  },
-  {
-    "lecture": "",
-    "grade": "1",
-    "good": "",
-    "bad": "",
-    "time": "5/9"
-  },
-  {
-    "lecture": "",
-    "grade": "1",
-    "good": "",
-    "bad": "",
-    "time": "5/9"
-  },
-  {
-    "lecture": "",
-    "grade": "1",
-    "good": "",
-    "bad": "",
-    "time": "5/9"
+    "most_engaged": "gdgsdg",
+    "most_distanced": "gdfgdsg",
+    "action_helpful": "gsdfgds",
+    "action_confusing": "gdsgsg",
+    "suprised": "gsdgdsfg\n",
+    "time": "5/10"
   }
 ]
